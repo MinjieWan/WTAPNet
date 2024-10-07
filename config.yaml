@@ -1,0 +1,70 @@
+data:
+#  dir_img: 'G:/mynet/data/sirst_128/train/images'
+#  dir_mask: 'G:/mynet/data/sirst_128/train/masks'
+#  dir_img: 'G:/mynet/data/IRSTD-1k/train_128/org'
+#  dir_mask: 'G:/mynet/data/IRSTD-1k/train_128/gt'
+  dir_img: 'G:/mynet/data/NUDT-SIRST/128/train/images'
+  dir_mask: 'G:/mynet/data/NUDT-SIRST/128/train/masks'
+  val_percent:  0.1
+  mask_suffix: ''
+  size: 128
+  scale_input: 128
+  interpolate_mode: bicubic
+
+model:
+  mode : 1
+  n_channels: 3
+  n_classes: 1
+  layer: 4
+  out_threshold: 0.5
+  se: False
+  load: False
+  load_dir: ./checkpoint/
+  save_dir: ./checkpoints/
+  bilinear: True
+
+trainer:
+  batch_size: 8
+  num_workers: 1
+  epochs: 300
+  learning_rate: 5e-6
+  amp: True
+  weight_decay: 1e-8
+  momentum:  0.999
+  gradient_clipping:  1.0
+  FocalLoss : True
+
+predict:
+#  pre_img: G:/mynet/data/sirst_128/test/images/
+#  pre_mask: G:/mynet/data/sirst_128/test/masks/
+#  pre_img: G:/mynet/data/IRSTD-1k/test_128/org/
+#  pre_mask: G:/mynet/data/IRSTD-1k/test_128/gt/
+  pre_img: 'G:/mynet/data/NUDT-SIRST/128/test/images/'
+  pre_mask: 'G:/mynet/data/NUDT-SIRST/128/test/masks/'
+#  pre_img: 'G:/mynet/data/mdfa_NUST/test_128/'
+#  pre_mask: 'G:/mynet/data/mdfa_NUST/test_gt_128/'
+#  pre_img: 'G:/mynet/data/NCHU-Seg/test_128/org/'
+#  pre_mask: 'G:/mynet/data/NCHU-Seg/test_128/gt/'
+
+#  load_dir: G:/mynet/code/outputs/2024-01-10/20-52-27/checkpoints/checkpoint_epoch142.pth
+  load_dir: G:/mynet/code/outputs/2024-01-11/08-29-11/checkpoints/checkpoint_epoch230.pth
+  scale: 128
+  mask_threshold: 0.5         # Minimum probability value to consider a mask pixel white
+  classes: 1
+  mask_suffix: ''
+  batch_size: 1
+  modelname: WSLCM
+#  modelres: G:/mynet/comparison/cnn/MDvsFA_cGAN-master/pytorch_outputs/NUDT/results/
+  modelres: G:/mynet/results/UIUNet/NUDT/
+
+resizer:
+  first_act: RE
+  last_bn: True
+  last_act: relu
+  scale: 3
+  mode: bicubic
+
+
+hydra:
+  run:
+    dir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
