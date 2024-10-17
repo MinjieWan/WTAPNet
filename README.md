@@ -15,7 +15,7 @@ Please see the requirements.txt contained in this respository.
 ## Usage
 - Download and release dataset.zip, and put the released folder in the data folder. 
 - Setup the required parameters in the main scripts.
-- Run train.py for training. Also, you can use the pre-trained model we provided.
+- Run train.py for training. Also, you can use the provided pre-trained model.
 - Run test.py for testing.
 
 ## Citation
