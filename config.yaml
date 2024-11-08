@@ -43,7 +43,7 @@ predict:
   batch_size: 1
   modelname: WSLCM
 #  modelres: G:/mynet/comparison/cnn/MDvsFA_cGAN-master/pytorch_outputs/NUDT/results/
-  modelres: G:/mynet/results/UIUNet/NUDT/
+#  modelres: G:/mynet/results/UIUNet/NUDT/
 
 resizer:
   first_act: RE
