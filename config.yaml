@@ -1,6 +1,6 @@
 data:
-  dir_img: './data/train/images'
-  dir_mask: './data/train/masks'
+  dir_img: './data/sirst/train/images'
+  dir_mask: './data/sirst/train/masks'
   val_percent:  0.1
   mask_suffix: ''
   size: 128
@@ -31,11 +31,11 @@ trainer:
   FocalLoss : True
 
 predict:
-  pre_img: './data/test/images/'
-  pre_mask: '.data/test/masks/'
+  pre_img: './data/sirst/test/images/'
+  pre_mask: '.data/sirst/test/masks/'
 
 #  load_dir: G:/mynet/code/outputs/2024-01-10/20-52-27/checkpoints/checkpoint_epoch142.pth
-  load_dir: G:/mynet/code/outputs/2024-01-11/08-29-11/checkpoints/checkpoint_epoch230.pth
+  load_dir: ./model/checkpoint_sirst.pth
   scale: 128
   mask_threshold: 0.5         # Minimum probability value to consider a mask pixel white
   classes: 1
