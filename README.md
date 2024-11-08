@@ -13,7 +13,7 @@ Infrared (IR) small target detection plays a vital role in various applications 
 Please see the requirements.txt contained in this repository.
 
 ## Usage
-- Download and release WTAPNet.zip, and you can get two folers, called dataset and model.
+- Download and release WTAPNet.zip, and you can get two folders, called dataset and model.
 - Put the two folders in the corresponding places in the repository. 
 - Setup the required parameters in the main scripts.
 - Run train.py for training, if we would like to train a new model. Otherwise, you can use the provided pre-trained model directly.
