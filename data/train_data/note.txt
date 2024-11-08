@@ -1,1 +1,0 @@
-# Please download the train images and put them in this folder.
